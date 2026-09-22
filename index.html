@@ -470,6 +470,59 @@
     .pull .demo { background: color-mix(in srgb, var(--purple) 30%, var(--card)); }
     .squat .demo { background: color-mix(in srgb, var(--blue) 30%, var(--card)); }
     .demo svg { width: 188px; height: 126px; overflow: visible; }
+
+    .vid {
+      grid-column: 1 / -1;
+      position: relative;
+      aspect-ratio: 16 / 9;
+      max-height: 340px;
+      overflow: hidden;
+      border-top: 2px solid var(--line);
+      background: #0b0b0b;
+      cursor: pointer;
+      padding: 0;
+    }
+    .vid img { width: 100%; height: 100%; object-fit: cover; display: block; opacity: .88; }
+    .vid:hover img, .vid:focus-visible img { opacity: 1; }
+    .vid iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+    .vid::before {
+      content: "VIDEO";
+      position: absolute;
+      left: 10px;
+      top: 9px;
+      z-index: 3;
+      padding: 3px 7px;
+      border: 1px solid #171717;
+      border-radius: 999px;
+      background: #fffaf0;
+      color: #171717;
+      font-family: "Roboto Mono", monospace;
+      font-size: 7px;
+      font-weight: 700;
+      letter-spacing: .05em;
+    }
+    .vid-play {
+      position: absolute;
+      inset: 0;
+      margin: auto;
+      width: 68px;
+      height: 68px;
+      border-radius: 50%;
+      background: #ffc400;
+      border: 3px solid #171717;
+      box-shadow: 3px 3px 0 #171717;
+      z-index: 2;
+    }
+    .vid-play::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-38%, -50%);
+      border-left: 22px solid #171717;
+      border-top: 14px solid transparent;
+      border-bottom: 14px solid transparent;
+    }
     .demo .yd-outline,
     .demo .yd-fill,
     .demo .yd-detail,
@@ -933,6 +986,7 @@
           <div class="rung-title">Standard push-up</div>
           <div class="rung-cue">Lower your chest all the way to the floor.</div>
           <div class="demo push-demo" title="Standard push-up demo"><svg viewBox="0 0 120 82" aria-hidden="true"><path class="floor" d="M8 70H112"/><g class="mover"><circle class="body" cx="31" cy="35" r="8"/><path class="limb" d="M40 40L76 48L103 64M76 48L91 66M48 43L41 64M57 45L55 66"/></g><path class="motion" d="M13 38v20m0 0-4-6m4 6 4-6"/></svg></div>
+          <div class="vid" data-yt="Z88Rl5bpnmI" role="button" tabindex="0" aria-label="Play video demo: Standard push-up"><img src="https://i.ytimg.com/vi/Z88Rl5bpnmI/hqdefault.jpg" alt="Video thumbnail: Standard push-up demo" loading="lazy"><span class="vid-play" aria-hidden="true"></span></div>
           <div class="gate">Gate<br>15 clean reps</div>
         </article>
         <article class="rung">
@@ -940,6 +994,7 @@
           <div class="rung-title">Feet elevated</div>
           <div class="rung-cue">Place both feet securely on a sturdy chair.</div>
           <div class="demo push-demo" title="Feet-elevated push-up demo"><svg viewBox="0 0 120 82" aria-hidden="true"><path class="floor" d="M8 70H112"/><path class="prop" d="M92 47h20v23M92 47v23"/><g class="mover"><circle class="body" cx="27" cy="42" r="8"/><path class="limb" d="M36 45L72 50L99 47M48 47L40 66M58 48L55 68"/></g><path class="motion" d="M14 40v18m0 0-4-6m4 6 4-6"/></svg></div>
+          <div class="vid" data-yt="xoX1nSewXgA" role="button" tabindex="0" aria-label="Play video demo: Feet-elevated push-up"><img src="https://i.ytimg.com/vi/xoX1nSewXgA/hqdefault.jpg" alt="Video thumbnail: Feet-elevated push-up demo" loading="lazy"><span class="vid-play" aria-hidden="true"></span></div>
           <div class="gate">Gate<br>12 reps</div>
         </article>
         <article class="rung">
@@ -947,6 +1002,7 @@
           <div class="rung-title">Staggered hands</div>
           <div class="rung-cue">One hand forward, one back. Switch sides.</div>
           <div class="demo push-demo" title="Staggered-hands push-up demo"><svg viewBox="0 0 120 82" aria-hidden="true"><path class="floor" d="M8 70H112"/><g class="mover"><circle class="body" cx="29" cy="32" r="8"/><path class="limb" d="M38 38L78 47L105 64M78 47L93 65M50 42L37 66M59 44L65 67"/></g><path class="motion" d="M17 38v19m0 0-4-6m4 6 4-6"/></svg></div>
+          <div class="vid" data-yt="YEuQAAZJJbg" role="button" tabindex="0" aria-label="Play video demo: Staggered-hands push-up"><img src="https://i.ytimg.com/vi/YEuQAAZJJbg/hqdefault.jpg" alt="Video thumbnail: Staggered-hands push-up demo" loading="lazy"><span class="vid-play" aria-hidden="true"></span></div>
           <div class="gate">Gate<br>8 each side</div>
         </article>
         <article class="rung">
@@ -954,6 +1010,7 @@
           <div class="rung-title">Assisted one-arm</div>
           <div class="rung-cue">Free hand touches the floor for balance—not for help.</div>
           <div class="demo push-demo" title="Assisted one-arm push-up demo"><svg viewBox="0 0 120 82" aria-hidden="true"><path class="floor" d="M8 70H112"/><g class="mover"><circle class="body" cx="29" cy="34" r="8"/><path class="limb" d="M38 39L76 48L103 65M76 48L91 66M53 43L44 67"/><path class="assist" d="M60 45L71 66"/></g><path class="motion" d="M15 39v18m0 0-4-6m4 6 4-6"/></svg></div>
+          <div class="vid" data-yt="ZWn_jexTBAU" role="button" tabindex="0" aria-label="Play video demo: Assisted one-arm push-up"><img src="https://i.ytimg.com/vi/ZWn_jexTBAU/hqdefault.jpg" alt="Video thumbnail: Assisted one-arm push-up demo" loading="lazy"><span class="vid-play" aria-hidden="true"></span></div>
           <div class="gate">Gate<br>5 each side</div>
         </article>
         <article class="rung">
@@ -961,6 +1018,7 @@
           <div class="rung-title">One-arm push-up</div>
           <div class="rung-cue">Keep your whole body braced and controlled.</div>
           <div class="demo push-demo" title="One-arm push-up demo"><svg viewBox="0 0 120 82" aria-hidden="true"><path class="floor" d="M8 70H112"/><g class="mover"><circle class="body" cx="29" cy="34" r="8"/><path class="limb" d="M38 39L76 48L104 65M76 48L91 66M56 44L49 67"/></g><path class="motion" d="M14 38v20m0 0-4-6m4 6 4-6"/></svg></div>
+          <div class="vid" data-yt="JiHkxqbhNuw" role="button" tabindex="0" aria-label="Play video demo: One-arm push-up"><img src="https://i.ytimg.com/vi/JiHkxqbhNuw/hqdefault.jpg" alt="Video thumbnail: One-arm push-up demo" loading="lazy"><span class="vid-play" aria-hidden="true"></span></div>
           <div class="gate open">Top rung</div>
         </article>
       </div>
@@ -984,6 +1042,7 @@
           <div class="rung-title">Australian row</div>
           <div class="rung-cue">Use a sturdy table or low rail. Feet forward is harder; tucked is easier.</div>
           <div class="demo pull-demo" title="Australian row demo"><svg viewBox="0 0 120 82" aria-hidden="true"><path class="prop" d="M10 17H110M22 17v53M98 17v53"/><path class="floor" d="M8 72H112"/><g class="mover"><circle class="body" cx="44" cy="38" r="8"/><path class="limb" d="M52 42L83 61L108 69M55 44L35 20M62 48L49 20"/></g><path class="motion" d="M26 50l10-12m0 0-8 2m8-2-1 8"/></svg></div>
+          <div class="vid" data-yt="YriyVhGr-0c" role="button" tabindex="0" aria-label="Play video demo: Australian row"><img src="https://i.ytimg.com/vi/YriyVhGr-0c/hqdefault.jpg" alt="Video thumbnail: Australian row demo" loading="lazy"><span class="vid-play" aria-hidden="true"></span></div>
           <div class="gate">Gate<br>15 clean reps</div>
         </article>
         <article class="rung">
@@ -991,6 +1050,7 @@
           <div class="rung-title">Dead hang</div>
           <div class="rung-cue">Just hold on while grip and shoulders learn to tolerate you.</div>
           <div class="demo hang-demo" title="Dead hang demo"><svg viewBox="0 0 120 82" aria-hidden="true"><path class="prop" d="M25 11H95"/><g class="mover"><circle class="body" cx="60" cy="35" r="8"/><path class="limb" d="M60 43V61M60 61L48 76M60 61L72 76M56 29L42 13M64 29L78 13"/></g><path class="motion" d="M91 36q8 7 0 14"/></svg></div>
+          <div class="vid" data-yt="urXu-roYGPc" role="button" tabindex="0" aria-label="Play video demo: Dead hang"><img src="https://i.ytimg.com/vi/urXu-roYGPc/hqdefault.jpg" alt="Video thumbnail: Dead hang demo" loading="lazy"><span class="vid-play" aria-hidden="true"></span></div>
           <div class="gate">Gate<br>30 seconds</div>
         </article>
         <article class="rung">
@@ -998,6 +1058,7 @@
           <div class="rung-title">Scapular pulls</div>
           <div class="rung-cue">Pull shoulders down and back while keeping elbows straight.</div>
           <div class="demo pull-demo" title="Scapular pull demo"><svg viewBox="0 0 120 82" aria-hidden="true"><path class="prop" d="M25 11H95"/><g class="mover"><circle class="body" cx="60" cy="31" r="8"/><path class="limb" d="M60 39V58M60 58L49 75M60 58L71 75M55 27L42 13M65 27L78 13"/><path class="motion" d="M47 42h26"/></g><path class="motion" d="M95 36v-14m0 0-4 6m4-6 4 6"/></svg></div>
+          <div class="vid" data-yt="WuMyslGDKXM" role="button" tabindex="0" aria-label="Play video demo: Scapular pull"><img src="https://i.ytimg.com/vi/WuMyslGDKXM/hqdefault.jpg" alt="Video thumbnail: Scapular pull demo" loading="lazy"><span class="vid-play" aria-hidden="true"></span></div>
           <div class="gate">Gate<br>10 clean reps</div>
         </article>
         <article class="rung">
@@ -1005,6 +1066,7 @@
           <div class="rung-title">Negatives</div>
           <div class="rung-cue">Step or jump to the top, then lower as slowly as you can stand.</div>
           <div class="demo negative-demo" title="Pull-up negative demo"><svg viewBox="0 0 120 82" aria-hidden="true"><path class="prop" d="M22 11H98"/><g class="mover"><circle class="body" cx="60" cy="26" r="8"/><path class="limb" d="M60 34V53M60 53L49 72M60 53L71 72M54 24L40 12M66 24L80 12"/></g><path class="motion" d="M101 25v34m0 0-4-7m4 7 4-7"/></svg></div>
+          <div class="vid" data-yt="jBSMDqs7OzM" role="button" tabindex="0" aria-label="Play video demo: Pull-up negative"><img src="https://i.ytimg.com/vi/jBSMDqs7OzM/hqdefault.jpg" alt="Video thumbnail: Pull-up negative demo" loading="lazy"><span class="vid-play" aria-hidden="true"></span></div>
           <div class="gate">Gate<br>5 × 5 sec</div>
         </article>
         <article class="rung">
@@ -1012,6 +1074,7 @@
           <div class="rung-title">Full pull-up</div>
           <div class="rung-cue">If the jump is too large, loop a band under one knee.</div>
           <div class="demo pull-demo" title="Full pull-up demo"><svg viewBox="0 0 120 82" aria-hidden="true"><path class="prop" d="M22 11H98"/><g class="mover"><circle class="body" cx="60" cy="28" r="8"/><path class="limb" d="M60 36V54M60 54L49 73M60 54L71 73M54 26L40 12M66 26L80 12"/></g><path class="motion" d="M101 54V25m0 0-4 7m4-7 4 7"/></svg></div>
+          <div class="vid" data-yt="skqDcg9OENM" role="button" tabindex="0" aria-label="Play video demo: Full pull-up"><img src="https://i.ytimg.com/vi/skqDcg9OENM/hqdefault.jpg" alt="Video thumbnail: Full pull-up demo" loading="lazy"><span class="vid-play" aria-hidden="true"></span></div>
           <div class="gate open">Top rung</div>
         </article>
       </div>
@@ -1035,6 +1098,7 @@
           <div class="rung-title">Bodyweight squat</div>
           <div class="rung-cue">Use full, comfortable depth with your whole foot grounded.</div>
           <div class="demo squat-demo" title="Bodyweight squat demo"><svg viewBox="0 0 120 82" aria-hidden="true"><path class="floor" d="M14 74H106"/><g class="mover"><circle class="body" cx="54" cy="21" r="8"/><path class="limb" d="M56 29L62 48M60 37L42 42M60 37L78 42M62 48L45 58L40 72M62 48L79 59L85 72"/></g><path class="motion" d="M101 27v32m0 0-4-7m4 7 4-7"/></svg></div>
+          <div class="vid" data-yt="TJ3Vdv0Acaw" role="button" tabindex="0" aria-label="Play video demo: Bodyweight squat"><img src="https://i.ytimg.com/vi/TJ3Vdv0Acaw/hqdefault.jpg" alt="Video thumbnail: Bodyweight squat demo" loading="lazy"><span class="vid-play" aria-hidden="true"></span></div>
           <div class="gate">Gate<br>20 reps</div>
         </article>
         <article class="rung">
@@ -1042,6 +1106,7 @@
           <div class="rung-title">Split squat</div>
           <div class="rung-cue">Keep the back foot flat and most of your weight on the front leg.</div>
           <div class="demo squat-demo" title="Split squat demo"><svg viewBox="0 0 120 82" aria-hidden="true"><path class="floor" d="M8 74H112"/><g class="mover"><circle class="body" cx="57" cy="18" r="8"/><path class="limb" d="M58 26L59 48M59 35L42 43M59 35L76 43M59 48L39 58L26 72M59 48L80 59L100 72"/></g><path class="motion" d="M108 28v30m0 0-4-7m4 7 4-7"/></svg></div>
+          <div class="vid" data-yt="VysSVkbOcgA" role="button" tabindex="0" aria-label="Play video demo: Split squat"><img src="https://i.ytimg.com/vi/VysSVkbOcgA/hqdefault.jpg" alt="Video thumbnail: Split squat demo" loading="lazy"><span class="vid-play" aria-hidden="true"></span></div>
           <div class="gate">Gate<br>12 each side</div>
         </article>
         <article class="rung">
@@ -1049,6 +1114,7 @@
           <div class="rung-title">Rear-foot elevated</div>
           <div class="rung-cue">Put the back foot on a sturdy chair and descend under control.</div>
           <div class="demo squat-demo" title="Rear-foot-elevated split squat demo"><svg viewBox="0 0 120 82" aria-hidden="true"><path class="floor" d="M8 74H112"/><path class="prop" d="M88 53h24v20M88 53v20"/><g class="mover"><circle class="body" cx="53" cy="18" r="8"/><path class="limb" d="M55 26L57 48M57 48L40 59L35 72M57 48L76 58L97 53M55 35L40 43M55 35L70 43"/></g><path class="motion" d="M16 28v30m0 0-4-7m4 7 4-7"/></svg></div>
+          <div class="vid" data-yt="TEXl2b3__S4" role="button" tabindex="0" aria-label="Play video demo: Rear-foot-elevated split squat"><img src="https://i.ytimg.com/vi/TEXl2b3__S4/hqdefault.jpg" alt="Video thumbnail: Rear-foot-elevated split squat demo" loading="lazy"><span class="vid-play" aria-hidden="true"></span></div>
           <div class="gate">Gate<br>10 each side</div>
         </article>
         <article class="rung">
@@ -1056,6 +1122,7 @@
           <div class="rung-title">Assisted pistol</div>
           <div class="rung-cue">Use only your fingertips on a door frame for balance.</div>
           <div class="demo squat-demo" title="Assisted pistol squat demo"><svg viewBox="0 0 120 82" aria-hidden="true"><path class="floor" d="M8 74H112"/><path class="prop" d="M103 8v66"/><g class="mover"><circle class="body" cx="64" cy="20" r="8"/><path class="limb" d="M63 28L59 48M59 48L44 59L41 72M59 48L83 55L104 53M62 35L44 44"/><path class="assist" d="M65 36L101 29"/></g><path class="motion" d="M18 28v30m0 0-4-7m4 7 4-7"/></svg></div>
+          <div class="vid" data-yt="HqCHXb91yMQ" role="button" tabindex="0" aria-label="Play video demo: Assisted pistol squat"><img src="https://i.ytimg.com/vi/HqCHXb91yMQ/hqdefault.jpg" alt="Video thumbnail: Assisted pistol squat demo" loading="lazy"><span class="vid-play" aria-hidden="true"></span></div>
           <div class="gate">Gate<br>5 each side</div>
         </article>
         <article class="rung">
@@ -1063,6 +1130,7 @@
           <div class="rung-title">Full pistol squat</div>
           <div class="rung-cue">Take your fingertips off the frame and own the movement.</div>
           <div class="demo squat-demo" title="Full pistol squat demo"><svg viewBox="0 0 120 82" aria-hidden="true"><path class="floor" d="M8 74H112"/><g class="mover"><circle class="body" cx="57" cy="20" r="8"/><path class="limb" d="M57 28L54 48M54 48L39 59L36 72M54 48L78 55L105 54M56 35L37 44M56 35L76 43"/></g><path class="motion" d="M16 28v30m0 0-4-7m4 7 4-7"/></svg></div>
+          <div class="vid" data-yt="yo4OyAZVv5c" role="button" tabindex="0" aria-label="Play video demo: Full pistol squat"><img src="https://i.ytimg.com/vi/yo4OyAZVv5c/hqdefault.jpg" alt="Video thumbnail: Full pistol squat demo" loading="lazy"><span class="vid-play" aria-hidden="true"></span></div>
           <div class="gate open">Top rung</div>
         </article>
       </div>
@@ -1300,6 +1368,17 @@
         demo.dataset.demo = spec[0];
         svg.setAttribute('viewBox', '0 0 188 126');
         svg.innerHTML = spec[1]();
+      });
+
+      // Click-to-load video facades: swap in the YouTube player only on demand.
+      document.querySelectorAll('.vid[data-yt]').forEach((el) => {
+        const load = () => {
+          if (el.dataset.loaded) return;
+          el.dataset.loaded = '1';
+          el.innerHTML = `<iframe src="https://www.youtube-nocookie.com/embed/${el.dataset.yt}?autoplay=1&rel=0" title="${el.getAttribute('aria-label') || 'Exercise demo video'}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>`;
+        };
+        el.addEventListener('click', load);
+        el.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); load(); } });
       });
     })();
   </script>
